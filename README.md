@@ -3,6 +3,8 @@
 ## An Node JS supercool REST API to administrate users
 The idea was to build an REST API in Node JS using best practices, patterns and frameworks that can be used in an enterprise application.
 
+[![Build Status](https://api.travis-ci.org/denisdnc/open-users.svg?branch=master)](https://travis-ci.com/denisdnc/open-users)
+
 ## TODOs
 
 - [ ] Refactor to use promises and validate
