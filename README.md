@@ -1,6 +1,6 @@
 # USERS SERVICES
 
-## An Node JS supercool REST API for administer users
+## An Node JS supercool REST API to administrate users
 The idea was to build an REST API in Node JS using best practices, patterns and frameworks that can be used in an enterprise application.
 
 ## TODOs
