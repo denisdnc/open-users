@@ -1,0 +1,45 @@
+{
+  "name": "users",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "NODE_PATH=./ nodemon scr/main/app.js",
+    "start-prd": "NODE_PATH=./ node scr/main/app.js",
+    "test": "NODE_PATH=./ LOG_LEVEL=warn mocha \"scr/test/**/*test.js\" npm test --grep \"@component|@unit\"",
+    "lint-js": "eslint --ext .js ./scr/main/"
+  },
+  "//": "add tests to pre-push",
+  "pre-push": [
+    "lint-js",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denisdnc/open-users.git"
+  },
+  "author": "Denis De Nadai Carraro",
+  "dependencies": {
+    "approvejs": "^3.1.2",
+    "body-parser": "^1.17.2",
+    "clone": "^2.1.2",
+    "express": "^4.15.3",
+    "mongodb": "^2.2.31",
+    "nodemon": "^1.18.6",
+    "object.omit": "^3.0.0",
+    "owasp-password-strength-test": "^1.3.0",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "eslint": "^4.2.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^5.2.0",
+    "pre-push": "^0.1.1"
+  }
+}
