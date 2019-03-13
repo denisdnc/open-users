@@ -22,6 +22,8 @@ The idea was to build an REST API in Node JS using best practices, patterns and 
 
 ## REST APIs:
 
+- [Postman collection](denisdnc-users.postman_collection.json)
+
 ### CREATE USER
   endpoint: /v1/users
 

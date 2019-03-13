@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "b4ac0b7f-391b-4e15-bbeb-5e0ff1d3aecc",
+		"name": "denisdnc/users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"odin@asgard.com\",\n\t\"name\": \"Odin\",\n\t\"password\": \"N3wP4ssw0rd!\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/users/5c886ead230c05593a86b440",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users",
+						"5c886ead230c05593a86b440"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validate password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"value\": \"N3wP4ssw0rd!\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/users/5c886ead230c05593a86b440/password/valid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users",
+						"5c886ead230c05593a86b440",
+						"password",
+						"valid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Other Name\",\n\t\"email\": \"other@asgard.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/users/5c886ead230c05593a86b440",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"users",
+						"5c886ead230c05593a86b440"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
