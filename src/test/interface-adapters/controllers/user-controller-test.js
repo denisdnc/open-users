@@ -7,7 +7,7 @@ chai.use(chaiHttp)
 const expect = chai.expect
 
 // Fixtures
-const userFixtures = require('scr/test/fixtures/user-fixtures')
+const userFixtures = require('src/test/fixtures/user-fixtures')
 
 const PORT = process.env.EXPOSED_PORT || '3000'
 

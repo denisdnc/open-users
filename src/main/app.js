@@ -1,15 +1,15 @@
 const start = (dbConnection, logger) => {
-  const userRepository = require('scr/main/interface-adapters/repositories/user-mongo-repository')(dbConnection, logger)
+  const userRepository = require('src/main/interface-adapters/repositories/user-mongo-repository')(dbConnection, logger)
 
   const validator = require('approvejs')
   const owasp = require('owasp-password-strength-test')
-  const validateUser = require('scr/main/business-rules/validate-user')(validator, owasp)
+  const validateUser = require('src/main/business-rules/validate-user')(validator, owasp)
 
-  const crypto = require('scr/main/infrastructure/crypto')()
-  const createUser = require('scr/main/business-rules/create-user')(validateUser, userRepository, crypto)
-  const findUserById = require('scr/main/business-rules/find-user-by-id')(userRepository)
-  const validateUserPassword = require('scr/main/business-rules/validate-user-password')(userRepository, crypto)
-  const editUser = require('scr/main/business-rules/edit-user')(userRepository, crypto)
+  const crypto = require('src/main/infrastructure/crypto')()
+  const createUser = require('src/main/business-rules/create-user')(validateUser, userRepository, crypto)
+  const findUserById = require('src/main/business-rules/find-user-by-id')(userRepository)
+  const validateUserPassword = require('src/main/business-rules/validate-user-password')(userRepository, crypto)
+  const editUser = require('src/main/business-rules/edit-user')(userRepository, crypto)
 
   const express = require('express')
   const server = express()
@@ -17,7 +17,7 @@ const start = (dbConnection, logger) => {
   server.use(bodyParser.json())
 
   const userController =
-    require('scr/main/interface-adapters/controllers/user-controller')(logger, server, createUser, findUserById, validateUserPassword, editUser)
+    require('src/main/interface-adapters/controllers/user-controller')(logger, server, createUser, findUserById, validateUserPassword, editUser)
   userController.map()
 
   server.listen(process.env.PORT || 3000, () => {
@@ -25,8 +25,8 @@ const start = (dbConnection, logger) => {
   })
 }
 
-const logger = require('scr/main/infrastructure/logger')()
-const database = require('scr/main/infrastructure/database')()
+const logger = require('src/main/infrastructure/logger')()
+const database = require('src/main/infrastructure/database')()
 
 database.connect((err, connection) => {
   if (err) throw logger.log('error', 'Error connecting database: ', err)

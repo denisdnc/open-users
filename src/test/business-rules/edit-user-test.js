@@ -5,12 +5,12 @@ const chai = require('chai')
 const expect = chai.expect
 
 // component dependencies
-const crypto = require('scr/main/infrastructure/crypto.js')()
+const crypto = require('src/main/infrastructure/crypto.js')()
 const userRepository = {}
 // component to test
-const editUser = require('scr/main/business-rules/edit-user')(userRepository, crypto)
+const editUser = require('src/main/business-rules/edit-user')(userRepository, crypto)
 // Fixtures
-const userFixtures = require('scr/test/fixtures/user-fixtures')
+const userFixtures = require('src/test/fixtures/user-fixtures')
 
 describe('FEATURE: edit user', () => {
 

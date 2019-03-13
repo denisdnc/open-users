@@ -4,10 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "NODE_PATH=./ nodemon scr/main/app.js",
-    "start-prd": "NODE_PATH=./ node scr/main/app.js",
-    "test": "NODE_PATH=./ LOG_LEVEL=warn mocha \"scr/test/**/*test.js\" npm test --grep \"@component|@unit\"",
-    "lint-js": "eslint --ext .js ./scr/main/"
+    "start": "NODE_PATH=./ nodemon src/main/app.js",
+    "start-prd": "NODE_PATH=./ node src/main/app.js",
+    "test": "NODE_PATH=./ LOG_LEVEL=warn mocha \"src/test/**/*test.js\" npm test --grep \"@component|@unit\"",
+    "lint-js": "eslint --ext .js ./src/main/"
   },
   "//": "add tests to pre-push",
   "pre-push": [

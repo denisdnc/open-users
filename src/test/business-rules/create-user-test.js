@@ -5,15 +5,15 @@ const chai = require('chai')
 const expect = chai.expect
 
 // Use case dependencies
-const crypto = require('scr/main/infrastructure/crypto.js')()
+const crypto = require('src/main/infrastructure/crypto.js')()
 const userRepository = {}
 const owasp = require('owasp-password-strength-test')
 const validator = require('approvejs')
-const validateUser = require('scr/main/business-rules/validate-user')(validator, owasp)
+const validateUser = require('src/main/business-rules/validate-user')(validator, owasp)
 // Use case to test
-const createUser = require('scr/main/business-rules/create-user')(validateUser, userRepository, crypto)
+const createUser = require('src/main/business-rules/create-user')(validateUser, userRepository, crypto)
 // Fixtures
-const userFixtures = require('scr/test/fixtures/user-fixtures')
+const userFixtures = require('src/test/fixtures/user-fixtures')
 
 describe('FEATURE: create user', () => {
   describe('SCENARIO: create user with success - @component', () => {

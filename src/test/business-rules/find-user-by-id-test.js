@@ -7,9 +7,9 @@ const expect = chai.expect
 // dependencies
 const userRepository = {}
 // component test
-const findUserById = require('scr/main/business-rules/find-user-by-id')(userRepository)
+const findUserById = require('src/main/business-rules/find-user-by-id')(userRepository)
 // fixtures
-const userFixtures = require('scr/test/fixtures/user-fixtures')
+const userFixtures = require('src/test/fixtures/user-fixtures')
 
 describe('FEATURE: find user by id', () => {
 

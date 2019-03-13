@@ -6,14 +6,14 @@ const chai = require('chai')
 const expect = chai.expect
 
 /* component dependencies */
-const crypto = require('scr/main/infrastructure/crypto')()
+const crypto = require('src/main/infrastructure/crypto')()
 const userRepository = {}
 
 /* component to test */
-const validateUserPassword = require('scr/main/business-rules/validate-user-password')(userRepository, crypto)
+const validateUserPassword = require('src/main/business-rules/validate-user-password')(userRepository, crypto)
 
 /* fixtures */
-const userFixtures = require('scr/test/fixtures/user-fixtures')
+const userFixtures = require('src/test/fixtures/user-fixtures')
 
 describe('FEATURE: validate user password', () => {
   describe('SCENARIO: password ok - @unit', () => {
