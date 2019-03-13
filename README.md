@@ -3,6 +3,13 @@
 ## An Node JS supercool REST API for administer users
 The idea was to build an REST API in Node JS using best practices, patterns and frameworks that can be used in an enterprise application.
 
+## TODOs
+
+- [ ] Refactor to use promises and validate
+- [ ] Refactor to use async and validate
+- [ ] Integration Test for repositories
+- [ ] Clean up database before End to End tests
+
 ## USER entity
 ```json
 {
@@ -155,6 +162,7 @@ The idea was to build an REST API in Node JS using best practices, patterns and 
 - [Revealing Module Pattern](https://toddmotto.com/mastering-the-module-pattern/)
 - [Dependency Injection](https://www.nodejsdesignpatterns.com/)
 - [Error-First Callbacks](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/)
+- [REST API Design Patterns](https://pages.apigee.com/rs/apigee/images/api-design-ebook-2012-03.pdf)
 
 #### Java Script:
 - [JavaScript Standard Style](https://github.com/standard/standard)
@@ -162,11 +170,15 @@ The idea was to build an REST API in Node JS using best practices, patterns and 
 #### Application Frameworks:
 - [Express JS](http://expressjs.com/)
 
+#### Testing Strategies
+- [Testing Strategies in a Microservice Architecture](https://martinfowler.com/articles/microservice-testing/)
+- [Test Driven Development](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd)
+
 #### Testing Frameworks:
 - [Mocha](https://mochajs.org/)
 - [Chai](http://chaijs.com/)
 
-#### Code quality frameworks:
+#### Code quality tools:
 - [ESlint](https://github.com/eslint/eslint)
 - [pre-push](https://github.com/dflourusso/pre-push)
 
