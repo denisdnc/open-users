@@ -22,6 +22,9 @@ The idea was to build an REST API in Node JS using best practices, patterns and 
     "createdAt": "2018-11-06T22:57:00.000Z"
 }
 ```
+## Documentation:
+
+access: http://localhost:3000 or doc.raml
 
 ## REST APIs:
 

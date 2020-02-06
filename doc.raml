@@ -1,0 +1,67 @@
+#%RAML 1.0
+title: Users Services
+version: 1
+baseUri: http://localhost:3000/{version}
+documentation:
+  - title: Welcome
+    content: |
+      Welcome to the Example Documentation. The Example API allows you
+      to do stuff. See also [example.com](https://www.example.com).
+  - title: Chapter two
+    content: |
+      More content here. Including **bold** text!
+/users:
+  description: Endpoint to manage users.
+  post:
+    description: Creates an user
+    body:
+      application/json:
+        example:
+          {
+            "email": "email@email.com",
+            "password": "string"
+          }
+    responses: 
+      201: 
+        body: 
+          application/json:
+            example:
+              {
+                "_id": "string",
+                "email": "email@email.com",
+                "password": "string",
+                "name": "string",
+                "createdAt": "2019-12-30T00:00:00.000Z"
+              }
+      422:
+        body:
+          application/json:
+            example:
+              {
+                "errors": [{
+                  "message": "error message"
+                }]
+              }
+  /{id}:
+    get:
+      description: Find user by id
+      responses: 
+        200:
+          body: 
+            application/json: 
+              example: 
+                {
+                  "_id": "string",
+                  "email": "email@email.com",
+                  "name": "string",
+                  "createdAt": "2019-12-30T00:00:00.000Z"
+                }
+        404:
+          body: 
+            application/json: 
+              example: 
+                {
+                  "errors": [{
+                    "message": "user not found"
+                  }]
+                }

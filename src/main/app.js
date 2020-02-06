@@ -20,6 +20,10 @@ const start = (dbConnection, logger) => {
     require('src/main/interface-adapters/controllers/user-controller')(logger, server, createUser, findUserById, validateUserPassword, editUser)
   userController.map()
 
+  const docController =
+    require('src/main/interface-adapters/controllers/doc-controller')(logger, server)
+  docController.map()
+
   server.listen(process.env.PORT || 3000, () => {
     logger.log('info', 'Application started and listening on port:', process.env.PORT || '3000')
   })
